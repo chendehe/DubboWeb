@@ -1,11 +1,12 @@
-package com.chendehe.dubbo;
+package com.chendehe.dubbo.xml;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.chendehe.dubbo.demo.ConsumerService;
+import com.chendehe.dubbo.xml.demo.ConsumerService;
 
 /**
- *
+ * 基于配置文件的消费者
+ * 
  * @author CDH
  * @since 2019/8/11 16:10
  */

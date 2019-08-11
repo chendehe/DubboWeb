@@ -1,4 +1,4 @@
-package com.chendehe.dubbo.demo;
+package com.chendehe.dubbo.xml.demo;
 
 /**
  *
