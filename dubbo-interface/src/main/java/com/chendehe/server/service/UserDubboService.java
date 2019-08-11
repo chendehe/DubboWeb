@@ -9,7 +9,7 @@ import com.chendehe.server.entity.UserAddress;
  * @author CDH
  * @since 2019/8/11 16:10
  */
-public interface UserService {
+public interface UserDubboService {
 
     List<UserAddress> getUserAddress(String userId);
 

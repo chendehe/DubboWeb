@@ -18,6 +18,6 @@
     <!--<dubbo:registry protocol="zookeeper" address="192.168.94.21:2181,192.168.94.22:2181,192.168.94.24:2181"/>-->
 
     <!-- 生成远程服务代理，代码加@Autowired注入，公共接口的接口类 -->
-    <dubbo:reference id="userService" interface="com.chendehe.server.service.UserService"/>
+    <dubbo:reference id="userDubboService" interface="com.chendehe.server.service.UserDubboService"/>
 
 </beans>

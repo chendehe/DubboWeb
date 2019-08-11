@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.chendehe.dubbo.demo.ConsumerService;
 import com.chendehe.server.entity.UserAddress;
-import com.chendehe.server.service.UserService;
+import com.chendehe.server.service.UserDubboService;
 
 /**
  *
@@ -16,15 +16,15 @@ import com.chendehe.server.service.UserService;
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    private final UserService userService;
+    private final UserDubboService userDubboService;
 
-    public ConsumerServiceImpl(UserService userService) {
-        this.userService = userService;
+    public ConsumerServiceImpl(UserDubboService userDubboService) {
+        this.userDubboService = userDubboService;
     }
 
     @Override
     public void consumerHello(String consumer) {
-        List<UserAddress> addressList = userService.getUserAddress("test");
+        List<UserAddress> addressList = userDubboService.getUserAddress("test");
 
         addressList.forEach(System.out::println);
     }

@@ -1,7 +1,5 @@
 package com.chendehe.dubbo;
 
-import java.io.IOException;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.chendehe.dubbo.demo.ConsumerService;
@@ -21,14 +19,15 @@ public class Consumer {
         ConsumerService consumerService = context.getBean(ConsumerService.class);
         consumerService.consumerHello("consumerService");
 
-        try {
-            int i = System.in.read();// 按任意键退出
-            System.out.println("End: " + i);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            context.stop();
-        }
+        context.stop();
+        // try {
+        // int i = System.in.read();// 按任意键退出
+        // System.out.println("End: " + i);
+        // } catch (IOException e) {
+        // e.printStackTrace();
+        // } finally {
+        // context.stop();
+        // }
 
     }
 }
