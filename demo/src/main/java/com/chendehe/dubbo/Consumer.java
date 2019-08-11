@@ -1,8 +1,10 @@
 package com.chendehe.dubbo;
 
-import com.chendehe.dubbo.demo.ConsumerService;
 import java.io.IOException;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.chendehe.dubbo.demo.ConsumerService;
 
 /**
  * Dubbo Consumer client.

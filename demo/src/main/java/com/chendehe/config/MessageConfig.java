@@ -11,15 +11,16 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 @Configuration
 public class MessageConfig {
 
-  /**
-   * 国际化处理.
-   * @return messageSource
-   */
-  @Bean("messageSource")
-  public MessageSource getMessage() {
-    ResourceBundleMessageSource source = new ResourceBundleMessageSource();
-    source.setBasenames("i18/messages");
-    source.setDefaultEncoding("utf-8");
-    return source;
-  }
+    /**
+     * 国际化处理.
+     * 
+     * @return messageSource
+     */
+    @Bean("messageSource")
+    public MessageSource getMessage() {
+        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+        source.setBasenames("i18/messages");
+        source.setDefaultEncoding("utf-8");
+        return source;
+    }
 }

@@ -1,7 +1,8 @@
 package com.chendehe.server.service;
 
-import com.chendehe.server.bean.UserAddress;
 import java.util.List;
+
+import com.chendehe.server.bean.UserAddress;
 
 /**
  * 用户服务
