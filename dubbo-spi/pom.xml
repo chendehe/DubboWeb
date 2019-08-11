@@ -14,6 +14,11 @@
     <name>dubbo-spi</name>
 
     <dependencies>
+        <!-- dubbo -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
