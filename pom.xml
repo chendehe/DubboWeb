@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>demo</module>
+        <module>dubbo-web</module>
         <module>dubbo-api</module>
         <module>dubbo-interface</module>
     </modules>

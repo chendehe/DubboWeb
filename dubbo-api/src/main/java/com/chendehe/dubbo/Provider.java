@@ -19,7 +19,7 @@ public class Provider {
         System.out.println("Dubbo provider start at " + context.getStartupDate());
 
         try {
-            int i = System.in.read();// 按任意键退出
+            int i = System.in.read();
             System.out.println("End: " + i);
         } catch (IOException e) {
             e.printStackTrace();
