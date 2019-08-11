@@ -14,7 +14,8 @@ spring:
 server:
   port: 1111
 logging:
-  level: info
+  level:
+    root: info
 
 
 
