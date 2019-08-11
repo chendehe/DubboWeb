@@ -6,6 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.chendehe.entity.UserEntity;
 
+/**
+ *
+ * @author CDH
+ * @since 2019/8/11 16:10
+ */
 @Mapper
 public interface UserDao extends BaseDao {
 

@@ -1,25 +1,31 @@
 package com.chendehe.dubbo.demo.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.chendehe.dubbo.demo.ConsumerService;
-import com.chendehe.dubbo.demo.ScheduleService;
+import com.chendehe.server.entity.UserAddress;
+import com.chendehe.server.service.UserService;
 
+/**
+ *
+ * @author CDH
+ * @since 2019/8/11 16:10
+ */
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    // @Autowired
-    // private UserService userService;
-    @Autowired
-    private ScheduleService scheduleService;
+    private final UserService userService;
+
+    public ConsumerServiceImpl(UserService userService) {
+        this.userService = userService;
+    }
 
     @Override
     public void consumerHello(String consumer) {
-        // List<UserAddress> addressList = userService.getUserAddressList("test");
-        //
-        // addressList.forEach(System.out::println);
-        boolean b = scheduleService.generateReport("1232");
-        System.out.println(b);
+        List<UserAddress> addressList = userService.getUserAddress("test");
+
+        addressList.forEach(System.out::println);
     }
 }

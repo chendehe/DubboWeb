@@ -5,7 +5,9 @@ import java.io.IOException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Dubbo provider.
+ *
+ * @author CDH
+ * @since 2019/8/11 16:10
  */
 public class Provider {
 
@@ -14,7 +16,7 @@ public class Provider {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"provider.xml"});
         context.start();
 
-        System.out.println("Dubbo provider start...");
+        System.out.println("Dubbo provider start at " + context.getStartupDate());
 
         try {
             int i = System.in.read();// 按任意键退出

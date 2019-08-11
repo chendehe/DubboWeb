@@ -8,8 +8,8 @@
     <dubbo:application name="dubbo-provider-app"/>
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <!--<dubbo:registry address="zookeeper://localhost:2181" />-->
-    <dubbo:registry protocol="zookeeper" address="192.168.94.21:2181,192.168.94.22:2181,192.168.94.24:2181"/>
+    <dubbo:registry address="zookeeper://localhost:2181"/>
+    <!--<dubbo:registry protocol="zookeeper" address="192.168.94.21:2181,192.168.94.22:2181,192.168.94.24:2181"/>-->
     <!--<dubbo:registry id="chinaRegistry" protocol="zookeeper" address="10.20.153.10:2181" group="china" />-->
     <!--<dubbo:registry id="intlRegistry" protocol="zookeeper" address="10.20.153.10:2181" group="intl" />-->
     <!-- 使用multicast广播注册中心暴露服务地址 -->

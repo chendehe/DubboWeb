@@ -7,7 +7,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.chendehe.dubbo.demo.ConsumerService;
 
 /**
- * Dubbo Consumer client.
+ *
+ * @author CDH
+ * @since 2019/8/11 16:10
  */
 public class Consumer {
 

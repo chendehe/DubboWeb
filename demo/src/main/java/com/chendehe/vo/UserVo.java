@@ -4,6 +4,11 @@ import java.util.Date;
 
 import lombok.Data;
 
+/**
+ *
+ * @author CDH
+ * @since 2019/8/11 16:10
+ */
 @Data
 public class UserVo {
 

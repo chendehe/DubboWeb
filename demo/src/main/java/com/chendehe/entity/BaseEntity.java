@@ -1,3 +1,8 @@
 package com.chendehe.entity;
 
-public interface BaseEntity {}
+/**
+ *
+ * @author CDH
+ * @since 2019/8/11 16:10
+ */
+interface BaseEntity {}

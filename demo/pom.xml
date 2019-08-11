@@ -66,6 +66,22 @@
             <artifactId>commons-collections4</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>com.chendehe.web</groupId>
+            <artifactId>dubbo-interface</artifactId>
+        </dependency>
+
+        <!-- dubbo -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <!-- 注册中心使用的是zookeeper，引入操作zookeeper的客户端端 -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
