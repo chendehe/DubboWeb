@@ -1,4 +1,4 @@
-package com.chendehe.dubbo.service.impl;
+package com.chendehe.dubbo.service;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +9,7 @@ import com.chendehe.server.service.UserService;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public List<UserAddress> getUserAddressList(String userId) {
+    public List<UserAddress> getUserAddress(String userId) {
         System.out.println("UserServiceImpl.....old...");
         // TODO Auto-generated method stub
         UserAddress address1 = new UserAddress(1, "北京市昌平区宏福科技园综合楼3层", "1", "李老师", "010-56253825", "Y");

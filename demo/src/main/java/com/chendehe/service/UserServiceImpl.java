@@ -3,6 +3,7 @@ package com.chendehe.service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.chendehe.dao.UserDao;
 import com.chendehe.entity.UserEntity;
-import com.chendehe.util.IdGenerator;
 import com.chendehe.vo.Page;
 import com.chendehe.vo.PageResult;
 import com.chendehe.vo.UserVo;
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
         // DataBinder binder = new DataBinder(vo);
         // binder.setValidator(new UserValidator());
         // binder.validate();
-        vo.setId(IdGenerator.get());
+        vo.setId(UUID.randomUUID().toString());
 
         UserEntity entity = convertVoToEntitySave(vo);
         userDao.save(entity);
