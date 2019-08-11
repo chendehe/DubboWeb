@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-boot-dubbo
+  messages:
+    basename: i18n/messages/messages,i18n/constants/constants
+    encoding: UTF-8
+    fallback-to-system-locale: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password:
+
+server:
+  port: 1111
+logging:
+  level:
+    root: info
+
+
+
