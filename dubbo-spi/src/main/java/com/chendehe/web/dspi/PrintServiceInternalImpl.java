@@ -1,6 +1,6 @@
 package com.chendehe.web.dspi;
 
-import com.alibaba.dubbo.common.URL;
+import org.apache.dubbo.common.URL;
 
 /**
  * @author CDH

@@ -1,15 +1,14 @@
 package com.chendehe.dubbo.annotation;
 
+import org.apache.dubbo.config.ApplicationConfig;
+import org.apache.dubbo.config.ConsumerConfig;
+import org.apache.dubbo.config.RegistryConfig;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ConsumerConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
-import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 
 /**
  * @author CDH
@@ -47,9 +46,7 @@ public class AnnotationConsumer {
         @Bean
         public RegistryConfig registryConfig() {
             RegistryConfig registryConfig = new RegistryConfig();
-            registryConfig.setProtocol("zookeeper");
-            registryConfig.setAddress("localhost");
-            registryConfig.setPort(2181);
+            registryConfig.setAddress("zookeeper://127.0.0.1:2181");
             return registryConfig;
         }
     }
