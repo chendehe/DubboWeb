@@ -9,8 +9,6 @@
         <version>2.0.0</version>
     </parent>
     <artifactId>dubbo-web</artifactId>
-    <version>1.0.0</version>
-
 
     <dependencies>
         <!--Springboot-->
