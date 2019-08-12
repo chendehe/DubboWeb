@@ -11,6 +11,9 @@ import com.alibaba.dubbo.common.extension.SPI;
 @SPI("myImpl2")
 public interface PrintService {
 
+    /**
+     * 优先级比 @SPI 高
+     */
     @Adaptive({"key"})
     void printInfo(URL url);
 }
