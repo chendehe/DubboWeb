@@ -1,13 +1,10 @@
 package com.chendehe;
 
-import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.context.annotation.PropertySource;
 
 /**
  *
@@ -16,22 +13,23 @@ import org.springframework.context.annotation.PropertySource;
  */
 @SpringBootApplication
 @ComponentScan(excludeFilters = {@Filter(type = FilterType.REGEX, pattern = {"com.chendehe.dubbo.*"})})
-@EnableDubbo(scanBasePackages = "com.chendehe.service")
+// 加了 starter 后可删除 @EnableDubbo(scanBasePackages = "com.chendehe.service")
 public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
-    @Configuration
-    @PropertySource("classpath:dubbo-consumer.properties")
-    static public class ConsumerConfiguration {
-
-    }
-
-    @Configuration
-    @PropertySource("classpath:dubbo-provider.properties")
-    static public class ProviderConfiguration {
-
-    }
+    // 加了 starter 后可删除
+    // @Configuration
+    // @PropertySource("classpath:dubbo-consumer.properties")
+    // static public class ConsumerConfiguration {
+    //
+    // }
+    //
+    // @Configuration
+    // @PropertySource("classpath:dubbo-provider.properties")
+    // static public class ProviderConfiguration {
+    //
+    // }
 }
