@@ -1,5 +1,6 @@
 package com.chendehe.service;
 
+import com.chendehe.server.service.CarDubboService;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,6 +33,8 @@ public class UserServiceImpl implements UserService {
 
     @Reference
     private UserDubboService userDubboService;
+    @Reference
+    private CarDubboService carDubboService;
 
     private UserDao userDao;
 
@@ -61,6 +64,7 @@ public class UserServiceImpl implements UserService {
     public UserVo findOne(String id) {
         List<UserAddress> addressList = userDubboService.getUserAddress("users");
         addressList.forEach(System.out::println);
+        System.out.println(carDubboService.getCarName("car"));
         return convertEntityToVo(userDao.findOne(id));
     }
 
