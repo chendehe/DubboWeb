@@ -1,7 +1,9 @@
 package com.chendehe.web.dspi;
 
+import com.alibaba.dubbo.common.URL;
 import com.alibaba.dubbo.common.extension.ExtensionLoader;
-import java.util.ServiceLoader;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Dubbo SPI 测试类
@@ -11,7 +13,9 @@ import java.util.ServiceLoader;
  */
 public class TestDubboSpi {
     public static void main(String[] args) {
-        PrintService printService = ExtensionLoader.getExtensionLoader(PrintService.class).getDefaultExtension();
-        printService.printInfo();
+        PrintService printService = ExtensionLoader.getExtensionLoader(PrintService.class).getAdaptiveExtension();
+
+        printService.printInfo(URL.valueOf("test://localhost/test"));
+        printService.printInfo(URL.valueOf("test://localhost/test?key=myImpl"));
     }
 }
