@@ -17,6 +17,7 @@
         <module>dubbo-web</module>
         <module>dubbo-api</module>
         <module>dubbo-interface</module>
+        <module>dubbo-spi</module>
     </modules>
 
     <properties>
