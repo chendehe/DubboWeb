@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.chendehe.dubbo.xml.demo.ConsumerService;
 import com.chendehe.server.entity.UserAddress;
 import com.chendehe.server.service.UserDubboService;
@@ -17,8 +16,11 @@ import com.chendehe.server.service.UserDubboService;
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    @Reference
-    private UserDubboService userDubboService;
+    private final UserDubboService userDubboService;
+
+    public ConsumerServiceImpl(UserDubboService userDubboService) {
+        this.userDubboService = userDubboService;
+    }
 
     @Override
     public void consumerHello(String consumer) {
