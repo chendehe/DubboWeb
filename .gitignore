@@ -21,3 +21,30 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea/
+boot-parent.iml
+dubbo-api/dubbo-api.iml
+dubbo-api/target/classes/META-INF/
+dubbo-api/target/classes/provider.xml
+dubbo-api/target/generated-sources/
+dubbo-api/target/maven-archiver/
+dubbo-api/target/maven-status/
+dubbo-interface/dubbo-interface.iml
+dubbo-interface/target/generated-sources/
+dubbo-interface/target/maven-archiver/
+dubbo-interface/target/maven-status/
+dubbo-spi/dubbo-spi.iml
+dubbo-spi/src/main/java/com/chendehe/web/App.java
+dubbo-spi/src/test/
+dubbo-spi/target/classes/META-INF/
+dubbo-spi/target/generated-sources/
+dubbo-web/dubbo-web.iml
+dubbo-web/src/test/
+dubbo-web/target/classes/META-INF/
+dubbo-web/target/classes/application.yml
+dubbo-web/target/classes/banner.txt
+dubbo-web/target/classes/consumer.xml
+dubbo-web/target/dubbo-web-1.0.0.jar.original
+dubbo-web/target/generated-sources/
+dubbo-web/target/maven-archiver/
+dubbo-web/target/maven-status/
