@@ -3,7 +3,8 @@ package com.chendehe.dubbo.annotation;
 import java.util.Arrays;
 import java.util.List;
 
-import com.alibaba.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.Service;
+
 import com.chendehe.server.entity.UserAddress;
 import com.chendehe.server.service.UserDubboService;
 

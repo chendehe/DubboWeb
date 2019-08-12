@@ -2,9 +2,10 @@ package com.chendehe.dubbo.api;
 
 import java.util.List;
 
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ReferenceConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
+import org.apache.dubbo.config.ApplicationConfig;
+import org.apache.dubbo.config.ReferenceConfig;
+import org.apache.dubbo.config.RegistryConfig;
+
 import com.chendehe.server.entity.UserAddress;
 import com.chendehe.server.service.UserDubboService;
 

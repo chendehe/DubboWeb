@@ -2,9 +2,9 @@ package com.chendehe.dubbo.annotation.impl;
 
 import java.util.List;
 
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.chendehe.dubbo.annotation.ConsumerService;
 import com.chendehe.server.entity.UserAddress;
 import com.chendehe.server.service.UserDubboService;
