@@ -1,0 +1,2 @@
+filter1=com.chendehe.web.dspi.filter.Print1Filter
+filter2=com.chendehe.web.dspi.filter.Print2Filter
