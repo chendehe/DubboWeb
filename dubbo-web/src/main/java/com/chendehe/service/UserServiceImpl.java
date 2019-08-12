@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.dubbo.config.annotation.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.chendehe.dao.UserDao;
 import com.chendehe.entity.UserEntity;
+import com.chendehe.server.entity.UserAddress;
+import com.chendehe.server.service.UserDubboService;
 import com.chendehe.vo.Page;
 import com.chendehe.vo.PageResult;
 import com.chendehe.vo.UserVo;
@@ -26,6 +29,9 @@ import com.chendehe.vo.UserVo;
 public class UserServiceImpl implements UserService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+
+    @Reference
+    private UserDubboService userDubboService;
 
     private UserDao userDao;
 
@@ -53,6 +59,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserVo findOne(String id) {
+        List<UserAddress> addressList = userDubboService.getUserAddress("users");
+        addressList.forEach(System.out::println);
         return convertEntityToVo(userDao.findOne(id));
     }
 

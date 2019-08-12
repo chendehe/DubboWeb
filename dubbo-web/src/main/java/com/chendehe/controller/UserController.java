@@ -3,6 +3,10 @@ package com.chendehe.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chendehe.service.UserService;
@@ -36,19 +40,15 @@ public class UserController {
     // return ResultUtil.exception(e, HttpStatus.INTERNAL_SERVER_ERROR);
     // }
     // }
-    //
-    // /**
-    // * 查找详情. 成功返回200.
-    // */
-    // @GetMapping("/{id}")
-    // ResponseEntity findOne(@PathVariable String id) {
-    // LOGGER.info("[UserController] id is:{}", id);
-    // try {
-    // return ResultUtil.success(service.findOne(id), HttpStatus.OK);
-    // } catch (BaseException e) {
-    // return ResultUtil.exception(e, HttpStatus.INTERNAL_SERVER_ERROR);
-    // }
-    // }
+
+    /**
+     * 查找详情. 成功返回200.
+     */
+    @GetMapping("/{id}")
+    ResponseEntity findOne(@PathVariable String id) {
+        LOGGER.info("[UserController] id is:{}", id);
+        return new ResponseEntity<>(service.findOne(id), HttpStatus.OK);
+    }
 
     // /**
     // * 新建. 成功返回201.
