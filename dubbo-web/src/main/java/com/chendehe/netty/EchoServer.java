@@ -39,11 +39,11 @@ public class EchoServer {
         // 6. 绑定监听端口并启动服务器
         ChannelFuture future = bootstrap.bind(8888);
         ChannelFuture sync = future.sync();
-        sync.channel().closeFuture().sync();
         // 7. Selector 轮询
         // 8. 网络事件通知
         // 9. 执行 Netty 系统和业务 HandlerChannel
 
+        sync.channel().closeFuture().sync();
         // 其他：
         // 此 handler 在 ServerBootstrap 初始化的时候执行
         //bootstrap.handler(new LoggingHandler(LogLevel.INFO));
