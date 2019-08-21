@@ -1,5 +1,6 @@
 package com.chendehe.netty;
 
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
@@ -65,12 +66,20 @@ public class EchoServer {
         // .config() 获取配置信息
 
         ChannelFuture future = bootstrap.bind();
-        ChannelFuture sync = future.sync();
         // 7. Selector 轮询
         // 8. 网络事件通知
         // 9. 执行 Netty 系统和业务 HandlerChannel
 
-        sync.channel().closeFuture().sync();
+        // 同步方式
+        // future.channel().closeFuture().sync();
+        // 异步回调
+        future.channel().closeFuture().addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture future) throws Exception {
+                System.out.println("operationComplete...");
+            }
+        });
 
+        System.out.println("server end");
     }
 }

@@ -45,17 +45,16 @@ public class EchoClient {
             .option(ChannelOption.TCP_NODELAY, true);
 
         ChannelFuture future = bootstrap.connect();
-        ChannelFuture sync = future.sync();
 
         Scanner sc = new Scanner(System.in);
         String line = sc.nextLine();
         while (!"no".equals(line)) {
-            sync.channel().writeAndFlush(line);
+            future.channel().writeAndFlush(line);
             sc = new Scanner(System.in);
             line = sc.nextLine();
         }
 
-        sync.channel().closeFuture().sync();
+        future.channel().closeFuture().sync();
         System.out.println("client end");
     }
 }
