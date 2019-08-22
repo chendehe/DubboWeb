@@ -23,7 +23,6 @@ public class AnnotationProvider {
     public static void main(String[] args) throws IOException {
         AnnotationConfigApplicationContext context =
             new AnnotationConfigApplicationContext(ProviderConfiguration.class);
-        context.start();
 
         System.out.println("Dubbo provider start at " + context.getStartupDate());
 

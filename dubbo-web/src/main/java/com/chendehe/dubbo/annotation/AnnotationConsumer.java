@@ -20,7 +20,6 @@ public class AnnotationConsumer {
         AnnotationConfigApplicationContext context =
             new AnnotationConfigApplicationContext(ConsumerConfiguration.class);
 
-        context.start();
         ConsumerService consumerService = context.getBean(ConsumerService.class);
         consumerService.consumerHello("hahahaha");
 
