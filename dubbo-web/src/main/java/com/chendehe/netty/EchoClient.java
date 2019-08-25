@@ -1,5 +1,8 @@
 package com.chendehe.netty;
 
+import java.net.InetSocketAddress;
+import java.util.Scanner;
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -8,12 +11,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.LengthFieldPrepender;
 import io.netty.handler.codec.string.StringEncoder;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
-import java.net.InetSocketAddress;
-import java.util.Scanner;
 
 /**
  * @author CDH
@@ -35,9 +33,10 @@ public class EchoClient {
                 @Override
                 protected void initChannel(SocketChannel ch) throws Exception {
                     ch.pipeline().addLast(new EchoClientHandler());
+                    ch.pipeline().addLast(new EchoClientHandler2());
                     // 编码
                     ch.pipeline().addLast(new StringEncoder());
-                    ch.pipeline().addLast(new LengthFieldPrepender(4, false));
+//                    ch.pipeline().addLast(new LengthFieldPrepender(4, false));
                 }
             })
             // 5. 异步发起 TCP 连接

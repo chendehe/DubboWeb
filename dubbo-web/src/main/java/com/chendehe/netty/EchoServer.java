@@ -1,23 +1,19 @@
 package com.chendehe.netty;
 
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelOption;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 import java.net.InetSocketAddress;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelFactory;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
-import io.netty.channel.ReflectiveChannelFactory;
-import io.netty.channel.ServerChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.LengthFieldPrepender;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 
 /**
  * @author CDH
@@ -41,9 +37,10 @@ public class EchoServer {
                 @Override
                 protected void initChannel(SocketChannel ch) throws Exception {
                     ch.pipeline().addLast(new EchoServerHandler());
+                    ch.pipeline().addLast(new EchoServerHandler2());
                     // 编码
                     ch.pipeline().addLast(new StringEncoder());
-                    ch.pipeline().addLast(new LengthFieldPrepender(4, false));
+//                    ch.pipeline().addLast(new LengthFieldPrepender(4, false));
                 }
             })
             // 6. 绑定监听端口并启动服务器
@@ -65,7 +62,12 @@ public class EchoServer {
         // .childAttr()
         // .config() 获取配置信息
 
-        ChannelFuture future = bootstrap.bind();
+        ChannelFuture future = bootstrap.bind().addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture future) throws Exception {
+                System.out.println("bind operationComplete...");
+            }
+        });
         // 7. Selector 轮询
         // 8. 网络事件通知
         // 9. 执行 Netty 系统和业务 HandlerChannel
@@ -76,7 +78,7 @@ public class EchoServer {
         future.channel().closeFuture().addListener(new ChannelFutureListener() {
             @Override
             public void operationComplete(ChannelFuture future) throws Exception {
-                System.out.println("operationComplete...");
+                System.out.println("close operationComplete...");
             }
         });
 
